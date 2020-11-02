@@ -43,7 +43,7 @@ app.mount('#app');
 #### With options
 ```js
 // Intensity values: 'high', 'medium', 'low'
-app.user(VueCurve, { color: '#000', intensity: 'medium' })
+app.use(VueCurve, { color: '#000', intensity: 'medium' })
 ```
 
 ## Usage
