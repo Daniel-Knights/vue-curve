@@ -1,24 +1,57 @@
-# v-curve
+# vue-curve
 
-## Project setup
-```
-npm install
-```
+## Description
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Vue-Curve is a Vue 3 plugin which allows for a custom directive, `v-curve`, to apply a curved box-shadow to any box-shaped element.
 
-### Compiles and minifies for production
-```
-npm run build
+[Demo](https://codepen.io/daniel-knights/pen/OJXZvMv)
+
+## Installation
+
+### CLI
+```bash
+npm i vue-curve
 ```
 
-### Lints and fixes files
-```
-npm run lint
+### CDN
+```html
+<script src="https://unpkg.com/vue-curve/dist/vue-curve.umd.min.js"></script>
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Setup
+
+### CLI
+```js
+import { createApp } from 'vue';
+import App from './App.vue';
+import VueCurve from 'vue-curve';
+
+const app = createApp(App);
+
+app.use(VueCurve);
+app.mount('#app');
+```
+
+### CDN
+```js
+const app = Vue.createApp({});
+
+app.use(VueCurve);
+app.mount('#app');
+```
+
+#### With options
+```js
+// Intensity values: 'high', 'medium', 'low'
+app.user(VueCurve, { color: '#000', intensity: 'medium' })
+```
+
+## Usage
+```html
+<div v-curve>VueCurve</div>
+```
+
+### With options
+```html
+<div v-curve:[color]="intensity">VueCurve</div>
+```
