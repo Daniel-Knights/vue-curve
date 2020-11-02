@@ -27,42 +27,40 @@ const formatIntensity = () => {
 };
 
 export const curve = options => {
-    return {
-        mounted(el, binding) {
-            const id = parseInt(Date.now()) * Math.floor(Math.random() * 100);
-            const stylesheet = document.createElement('style');
-            const existingStylesheet = document.getElementById('v__curve-stylesheet');
+    return (el, binding) => {
+        const id = parseInt(Date.now()) * Math.floor(Math.random() * 100);
+        const stylesheet = document.createElement('style');
+        const existingStylesheet = document.getElementById('v__curve-stylesheet');
 
-            // Determine between global options and local options
-            color = binding.arg || options.color;
-            intensity = binding.value || options.intensity;
+        // Determine between global options and local options
+        color = binding.arg || options.color;
+        intensity = binding.value || options.intensity;
 
-            if (intensity) formatIntensity();
+        if (intensity) formatIntensity();
 
-            // Populate stylesheet
-            stylesheet.type = 'text/css';
-            stylesheet.id = `v__curve-stylesheet`;
-            stylesheet.innerHTML = minify(defaultStyles);
+        // Populate stylesheet
+        stylesheet.type = 'text/css';
+        stylesheet.id = `v__curve-stylesheet`;
+        stylesheet.innerHTML = minify(defaultStyles);
 
-            // Add dynamic 'box-shadow' and 'bottom' values to stylesheet
-            if (color || intensity) {
-                const minifiedStyles = minify(dynamicStyles(color, formattedIntensity, id));
+        // Add dynamic 'box-shadow' and 'bottom' values to stylesheet
+        if (color || intensity) {
+            const minifiedStyles = minify(dynamicStyles(color, formattedIntensity, id));
 
-                el.classList.add(`v__curve-${id}`);
+            el.classList.add(`v__curve-${id}`);
 
-                if (existingStylesheet) {
-                    existingStylesheet.innerHTML += minifiedStyles;
-                } else {
-                    stylesheet.innerHTML += minifiedStyles;
-                }
+            if (existingStylesheet) {
+                existingStylesheet.innerHTML += minifiedStyles;
+            } else {
+                stylesheet.innerHTML += minifiedStyles;
             }
+        }
 
-            // Ensure no duplicate stylesheets before appending
-            if (!existingStylesheet) {
-                document.head.appendChild(stylesheet);
-            }
+        // Ensure no duplicate stylesheets before appending
+        if (!existingStylesheet) {
+            document.head.appendChild(stylesheet);
+        }
 
-            el.classList.add(`v__curve`);
-        },
+        el.classList.add(`v__curve`);
     };
 };
