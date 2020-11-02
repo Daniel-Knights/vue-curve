@@ -31,6 +31,7 @@ export const curve = options => {
         mounted(el, binding) {
             const id = parseInt(Date.now()) * Math.floor(Math.random() * 100);
             const stylesheet = document.createElement('style');
+            const existingStylesheet = document.getElementById('v__curve-stylesheet');
 
             // Determine between global options and local options
             color = binding.arg || options.color;
@@ -44,13 +45,13 @@ export const curve = options => {
             stylesheet.innerHTML = minify(defaultStyles);
 
             // Ensure no duplicate stylesheets before appending
-            if (!document.getElementById('v__curve-stylesheet')) {
+            if (!existingStylesheet) {
                 document.head.appendChild(stylesheet);
             }
 
             // Add dynamic 'box-shadow' and 'bottom' values to stylesheet
             if (color || intensity) {
-                document.getElementById('v__curve-stylesheet').innerHTML += minify(
+                existingStylesheet.innerHTML += minify(
                     dynamicStyles(color, formattedIntensity, id)
                 );
                 el.classList.add(`v__curve-${id}`);
