@@ -2,7 +2,7 @@
 
 ## Description
 
-Vue-Curve is a Vue 3 plugin which allows for a custom directive, `v-curve`, to apply a curved box-shadow to any box-shaped element.
+Vue-Curve is a Vue 3 plugin which allows for a custom directive, `v-curve`, which applies a curved 'box-shadow' to any box-shaped element.
 
 [Demo](https://codepen.io/daniel-knights/pen/OJXZvMv)
 
@@ -51,7 +51,7 @@ app.user(VueCurve, { color: '#000', intensity: 'medium' })
 <div v-curve>VueCurve</div>
 ```
 
-### With options
+#### With options
 ```html
 <div v-curve:[color]="intensity">VueCurve</div>
 ```
