@@ -1,6 +1,6 @@
 {
     "name": "vue-curve",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "description": "A Vue 3 plugin that exposes a custom directive to apply a curved 'box-shadow' to any box-shaped element",
     "private": false,
     "main": "/dist/vue-curve.umd.min.js",
