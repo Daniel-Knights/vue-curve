@@ -30,16 +30,24 @@ export const minify = styles => {
     return minified;
 };
 
-export const dynamicStyles = (color, intensity, selector) => `
-    .v__curve-${selector} {
-        box-shadow: 0 0 10px -5px ${color};
+export const dynamicStyles = (color, intensity, selector) => {
+    let styles = `
+        .v__curve-${selector}::before,
+        .v__curve-${selector}::after {
+            ${intensity ? 'bottom: ' + intensity + 'px;' : ''}
+            ${color ? 'box-shadow: 0 0 6px 8px ' + color + ';' : ''}
+        }
+    `;
+
+    if (color) {
+        styles += `
+        .v__curve-${selector} {
+            box-shadow: 0 0 10px -5px ${color || '#000'};
+        }`;
     }
-    .v__curve-${selector}::before,
-    .v__curve-${selector}::after {
-        bottom: ${intensity}px;
-        box-shadow: 0 0 6px 8px ${color};
-    }
-`;
+
+    return styles;
+};
 
 export const defaultStyles = `
     .v__curve {
@@ -57,6 +65,7 @@ export const defaultStyles = `
         max-width: 200px;
         box-shadow: 0 0 6px 8px #000;
         z-index: -1;
+        transition: transform 0.3s;
     }
     .v__curve::before {
         left: 12px;

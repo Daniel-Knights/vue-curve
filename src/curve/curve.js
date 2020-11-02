@@ -44,17 +44,22 @@ export const curve = options => {
             stylesheet.id = `v__curve-stylesheet`;
             stylesheet.innerHTML = minify(defaultStyles);
 
+            // Add dynamic 'box-shadow' and 'bottom' values to stylesheet
+            if (color || intensity) {
+                const minifiedStyles = minify(dynamicStyles(color, formattedIntensity, id));
+
+                el.classList.add(`v__curve-${id}`);
+
+                if (existingStylesheet) {
+                    existingStylesheet.innerHTML += minifiedStyles;
+                } else {
+                    stylesheet.innerHTML += minifiedStyles;
+                }
+            }
+
             // Ensure no duplicate stylesheets before appending
             if (!existingStylesheet) {
                 document.head.appendChild(stylesheet);
-            }
-
-            // Add dynamic 'box-shadow' and 'bottom' values to stylesheet
-            if (color || intensity) {
-                existingStylesheet.innerHTML += minify(
-                    dynamicStyles(color, formattedIntensity, id)
-                );
-                el.classList.add(`v__curve-${id}`);
             }
 
             el.classList.add(`v__curve`);

@@ -14,6 +14,10 @@
     <div>
         <p v-curve>CURVED</p>
     </div>
+
+    <div>
+        <p v-curve>CURVED</p>
+    </div>
 </template>
 
 <script>
@@ -37,7 +41,7 @@ export default {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
-    color: #fff;
+    color: #000;
 }
 
 body {
@@ -55,8 +59,8 @@ div:not(#app) {
 p {
     margin: 0;
     padding: 20px;
-    color: #fff;
-    background: #72efaf;
+    color: #000;
+    /* background: #72efaf; */
 }
 #app div:nth-of-type(1) p {
     padding: 100px 20px;
