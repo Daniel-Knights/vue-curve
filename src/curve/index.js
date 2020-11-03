@@ -3,7 +3,7 @@ import { curve } from './curve';
 const VueCurve = {
     install: (app, options) => {
         // Set defaults
-        if (!options) options = { box: true };
+        if (!options) options = {};
 
         app.directive('curve', curve(options));
     },
