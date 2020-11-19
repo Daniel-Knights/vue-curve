@@ -1,5 +1,8 @@
 # vue-curve
 
+[![npm](https://img.shields.io/npm/v/vue-curve.svg)](https://www.npmjs.com/package/vue-curve)
+[![vue](https://img.shields.io/badge/vue-3.x-brightgreen)](https://v3.vuejs.org/)
+
 ## Description
 
 Vue-Curve is a Vue 3 plugin which allows for a custom directive, `v-curve`, which applies a curved 'box-shadow' to any box-shaped element.
