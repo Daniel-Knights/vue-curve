@@ -14,7 +14,8 @@
     },
     "main": "dist/vue-curve.umd.min.js",
     "files": [
-        "dist/vue-curve.umd.min.js"
+        "dist/vue-curve.umd.min.js",
+        "dist/index.d.ts"
     ],
     "types": "dist/index.d.ts",
     "devDependencies": {
