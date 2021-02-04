@@ -20,7 +20,7 @@ npm i vue-curve
 ### CDN
 
 ```html
-<script src="https://unpkg.com/vue-curve/dist/vue-curve.umd.min.js"></script>
+<script src="https://unpkg.com/vue-curve"></script>
 ```
 
 ## Setup
@@ -28,30 +28,30 @@ npm i vue-curve
 ### CLI
 
 ```js
-import { createApp } from 'vue';
-import App from './App.vue';
-import VueCurve from 'vue-curve';
+import { createApp } from 'vue'
+import App from './App.vue'
+import VueCurve from 'vue-curve'
 
-const app = createApp(App);
+const app = createApp(App)
 
-app.use(VueCurve);
-app.mount('#app');
+app.use(VueCurve)
+app.mount('#app')
 ```
 
 ### CDN
 
 ```js
-const app = Vue.createApp({});
+const app = Vue.createApp({})
 
-app.use(VueCurve);
-app.mount('#app');
+app.use(VueCurve)
+app.mount('#app')
 ```
 
 #### With options
 
 ```js
 // Intensity values: 'high', 'medium', 'low'
-app.use(VueCurve, { color: '#000', intensity: 'medium' });
+app.use(VueCurve, { color: '#000', intensity: 'medium' })
 ```
 
 ## Usage
@@ -60,7 +60,7 @@ app.use(VueCurve, { color: '#000', intensity: 'medium' });
 <div v-curve>VueCurve</div>
 ```
 
-#### With options
+#### With local options
 
 ```html
 <div v-curve:[color]="intensity">VueCurve</div>
