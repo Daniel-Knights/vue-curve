@@ -1,6 +1,4 @@
-import type { Directive } from 'vue'
-
-declare module 'vue-curve'
+import type { Plugin } from 'vue'
 
 /**
  * A directive for adding a curved box-shadow to any element through `v-curve`.
@@ -10,5 +8,5 @@ declare module 'vue-curve'
  * @property `color?` - `string`
  * @property `intensity?` - `string` ("low", "medium" or "high")
  */
-declare const VueCurve: Directive
+declare const VueCurve: Plugin
 export default VueCurve
