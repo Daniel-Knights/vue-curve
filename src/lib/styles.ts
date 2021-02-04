@@ -1,5 +1,5 @@
 // Minify CSS
-export const minify = (styles: string): string => {
+export function minify(styles: string): string {
     let selector = false
     let value = false
 
@@ -31,11 +31,11 @@ export const minify = (styles: string): string => {
     return minified
 }
 
-export const dynamicStyles = (
+export function dynamicStyles(
     selector: number,
     color?: string,
     intensity?: number
-): string => {
+): string {
     let styles = `
         .v__curve-${selector}::before,
         .v__curve-${selector}::after {

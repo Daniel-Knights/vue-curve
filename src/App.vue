@@ -1,6 +1,6 @@
 <template>
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+    <img v-curve alt="Vue logo" src="./assets/logo.png" />
+    <HelloWorld key="1" msg="Welcome to Your Vue.js + TypeScript App" />
 </template>
 
 <script lang="ts">

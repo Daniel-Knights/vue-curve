@@ -6,7 +6,7 @@ let color
 let intensity: string
 let formattedIntensity: number
 
-const formatIntensity = (): void => {
+function formatIntensity(): void {
     // Format into px value for CSS 'bottom' property
     switch (intensity) {
         case 'low':
@@ -30,7 +30,7 @@ const formatIntensity = (): void => {
     }
 }
 
-export const curve = (options: Options) => {
+export function curve(options: Options) {
     return (el: Element, binding: DirectiveBinding): void => {
         const id = Math.abs(Date.now()) * Math.floor(Math.random() * 100)
         const stylesheet = document.createElement('style')
