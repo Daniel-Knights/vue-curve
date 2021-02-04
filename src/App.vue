@@ -1,38 +1,18 @@
 <template>
-    <div>
-        <p v-curve:[rgb]>CURVED SHADOW</p>
-    </div>
-
-    <div>
-        <p v-curve:[rgb]="intensity">CURVED SHADOW CURVED SHADOW</p>
-    </div>
-
-    <div>
-        <p v-curve="intensity">CURVED</p>
-    </div>
-
-    <div>
-        <p v-curve>CURVED</p>
-    </div>
-
-    <div>
-        <p v-curve>CURVED</p>
-    </div>
+    <img alt="Vue logo" src="./assets/logo.png" />
+    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
 </template>
 
-<script>
-export default {
-    name: 'App',
+<script lang="ts">
+import { defineComponent } from 'vue'
+import HelloWorld from './components/HelloWorld.vue'
 
-    data() {
-        return {
-            color: 'blue',
-            intensity: 'high',
-            rgb: 'rgba(234,24,24)',
-            hsl: 'hsla(20,100%,50%,0.9)',
-        };
-    },
-};
+export default defineComponent({
+    name: 'App',
+    components: {
+        HelloWorld
+    }
+})
 </script>
 
 <style>
@@ -41,28 +21,7 @@ export default {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
-    color: #000;
-}
-
-body {
-    margin: 0;
-}
-
-div:not(#app) {
-    display: block;
-    margin: 0 auto;
-    height: 100vh;
-    width: fit-content;
-    font: 30px Arial;
-}
-
-p {
-    margin: 0;
-    padding: 20px;
-    color: #000;
-    /* background: #72efaf; */
-}
-#app div:nth-of-type(1) p {
-    padding: 100px 20px;
+    color: #2c3e50;
+    margin-top: 60px;
 }
 </style>
