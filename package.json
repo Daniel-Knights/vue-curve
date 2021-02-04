@@ -7,7 +7,8 @@
     "scripts": {
         "serve": "vue-cli-service serve",
         "lint": "vue-cli-service lint",
-        "lib": "vue-cli-service build --target lib --name vue-curve ./src/lib/index.ts"
+        "lib": "vue-cli-service build --target lib --name vue-curve ./src/lib/index.ts",
+        "prepublishOnly": "npm version patch"
     },
     "main": "dist/vue-curve.umd.min.js",
     "files": [
